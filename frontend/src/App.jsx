@@ -1,9 +1,15 @@
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import LoginPage from './pages/LoginPage/LoginPage';
+import ProtectedRoute from './lib/protectedRoute';
+
 function App() {
   return (
-    <>
-      <h1 className="text-xl font-medium text-center w-full">Hello world</h1>
-    </>
-  )
+    <Router>
+        <Routes>
+          <Route path="/login" element={<LoginPage />}/>
+        </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
