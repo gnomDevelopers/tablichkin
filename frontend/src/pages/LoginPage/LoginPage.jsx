@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import api from '../../api/api';
-import * as Validator from '../../pkg/validator'
+import * as Validator from '../../pkg/validator';
+import { useStatusWindowContext } from '../../widgets/StatusWindow/StatusWindowProvider';
 
 import SwapperWidget from './widgets/reg-log-swapper';
 import Input from '../../lib/customInput';
@@ -19,6 +20,7 @@ function LoginPage() {
     registerPassword: '',
     registerRepeatPassword: ''
   });
+  const sw = useStatusWindowContext();
 
   const updateFormData = (field, value) => {
     setFormData(prev => ({
@@ -29,24 +31,44 @@ function LoginPage() {
 
   const execAuth = async () => {
     if (isLoginSelected) {
-      const valid = validateLoginData(formData.loginEmail, formData.loginPassword);
+      const validationError = validateLoginData(formData.loginEmail, formData.loginPassword);
 
-      console.log(`valid: `, valid);
-      if (valid !== '') return; // Вывод сообщения об ошибке
+      if (validationError !== '') {
+        sw.error(validationError, 2000);
+        return; 
+      }
       
-      const res = await api.auth.login(formData.loginEmail, formData.loginPassword);
-      
+      let swID = sw.loading('Sending data...', 0);
+      try {
+        const res = await api.auth.login(formData.loginEmail, formData.loginPassword);
+        sw.hideStatus(swID);
+      } catch(e) {
+        sw.hideStatus(swID);
+      }
+
+      swID = sw.success('Successfully verified!');
+
       // Logic
       
       return;
     } 
     else {
-      const valid = validateRegisterData(formData.registerFio, formData.registerEmail, formData.registerPassword, formData.registerRepeatPassword);
+      const validationError = validateRegisterData(formData.registerFio, formData.registerEmail, formData.registerPassword, formData.registerRepeatPassword);
       
-      console.log(`valid: `, valid);
-      if (valid !== '') return; // Вывод сообщение об ошибке
+      if (validationError !== '') {
+        sw.error(validationError, 2000);
+        return;
+      } 
 
-      const res = await api.auth.register(formData.registerFio, formData.registerEmail, formData.registerPassword);
+      let swID = sw.loading('Sending data...', 0);
+      try{
+        const res = await api.auth.register(formData.registerFio, formData.registerEmail, formData.registerPassword);
+        sw.hideStatus(swID);
+      } catch(e) {
+        sw.hideStatus(swID);
+      } 
+
+      swID = sw.success('Successfully registrated!');
 
       // Logic
 
@@ -147,7 +169,7 @@ function LoginPage() {
 }
 
 function validateLoginData(email, password) {
-  if (typeof email !== 'string' || typeof password !== 'string') return 'Не все обязательные поля заполнены!';
+  if (isEmptyStr(email) || isEmptyStr(password)) return 'Не все обязательные поля заполнены!';
   
   const emailVal = Validator.ValidUserEmail(email)
   if (emailVal.error !== '') return emailVal.error;
@@ -159,7 +181,7 @@ function validateLoginData(email, password) {
 }
 
 function validateRegisterData(fio, email, password, repeatPassword) {
-  if (typeof fio !== 'string' || typeof email !== 'string' || typeof password !== 'string' || typeof repeatPassword !== 'string') return 'Не все обязательные поля заполнены!';
+  if (isEmptyStr(fio) || isEmptyStr(email) || isEmptyStr(password) || isEmptyStr(repeatPassword)) return 'Не все обязательные поля заполнены!';
   
   const fioVal = Validator.ValidUserFIO(fio)
   if (fioVal.error !== '') return fioVal.error;
@@ -174,6 +196,10 @@ function validateRegisterData(fio, email, password, repeatPassword) {
   if (!passwordRepeatVal) return 'Пароли не совпадают!'
 
   return '';
+}
+
+function isEmptyStr(str) {
+  return typeof str !== 'string' || str == '';
 }
 
 export default LoginPage;

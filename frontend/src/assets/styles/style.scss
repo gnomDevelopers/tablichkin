@@ -1,6 +1,8 @@
 @theme {
-  --color-0: oklch(0.979 0 0); //#F8F8F8;
-  --color-1: oklch(0.939 0 0); //#ECEDEC;
+  --color-0: oklch(0.979 0 0); //#F8F8F8
+  --color-1: oklch(0.939 0 0); //#ECEDEC
+
+  --color-status-window-bg: oklch(0.8975 0 0);
   
   --color-brd: oklch(0.8853 0 0); //#D9D9D9;
 
@@ -36,6 +38,36 @@
     //   outline: 2px solid var(--color-border-focus);
     //   border-color: var(--color-border-main);
     // }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(40px);
+      opacity: 0;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-out {
+    animation: slideOut 0.3s ease-in forwards;
   }
 
 }
