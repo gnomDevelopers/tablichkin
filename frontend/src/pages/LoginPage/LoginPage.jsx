@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useStatusWindowContext } from '../../widgets/StatusWindow/StatusWindowProvider';
+import { useUser } from '../../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../../api/api';
 import * as Validator from '../../pkg/validator';
-import { useStatusWindowContext } from '../../widgets/StatusWindow/StatusWindowProvider';
 
 import SwapperWidget from './widgets/reg-log-swapper';
 import Input from '../../lib/customInput';
@@ -21,6 +23,8 @@ function LoginPage() {
     registerRepeatPassword: ''
   });
   const sw = useStatusWindowContext();
+  const user = useUser();
+  const navigate = useNavigate();
 
   const updateFormData = (field, value) => {
     setFormData(prev => ({
@@ -46,7 +50,9 @@ function LoginPage() {
         sw.hideStatus(swID);
       }
 
+      user.login(1, 'Name', 'Surname');
       swID = sw.success('Successfully verified!');
+      navigate('/main', { replace: true });
 
       // Logic
       
@@ -68,7 +74,9 @@ function LoginPage() {
         sw.hideStatus(swID);
       } 
 
+      user.login(1, 'Name', 'Surname');
       swID = sw.success('Successfully registrated!');
+      navigate('/main', { replace: true });
 
       // Logic
 
@@ -77,7 +85,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="flex flex-row w-svw h-svh overflow-hidden items-stretch bg-0">
+    <div className="flex flex-row w-svw h-svh overflow-hidden items-stretch bg-b0">
 
       <article className='flex flex-col w-1/2 shrink-0 relative overflow-hidden'>
 

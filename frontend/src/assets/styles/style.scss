@@ -1,17 +1,18 @@
 @theme {
-  --color-0: oklch(0.979 0 0); //#F8F8F8
-  --color-1-5: oklch(0.959 0 0);
-  --color-1: oklch(0.939 0 0); //#ECEDEC
+  --color-b0: oklch(0.979 0 0); //#F8F8F8
+  --color-b1: oklch(0.929 0 0);
+  --color-b2: oklch(0.869 0 0);
 
   --color-status-window-bg: oklch(0.8975 0 0);
   
   --color-brd: oklch(0.8853 0 0); //#D9D9D9;
   --color-brd-dark: oklch(0.8253 0 0);
 
-  --color-text-primary: oklch(0.3012 0 0); //#2E2E2E;
+  --color-text-primary: oklch(0.3012 0 0); //#2E2E2E; 
   --color-text-secondary: oklch(0.9911 0 0); //#FCFCFC;
   --color-text-description: oklch(0.7826 0 0); //#B8B8B8;
   --color-text-placeholder: oklch(0.8853 0 0); //#D9D9D9;
+  --color-text-link: oklch(0.45 0.0911 155.04);
 
   --color-primary: oklch(0.4226 0.0911 155.04); //#185C37;
   --color-primary-hover: oklch(0.4626 0.0911 155.04); 
@@ -26,10 +27,10 @@
   }
 
   .custom-input{
-    @apply flex flex-row h-9 items-stretch w-full gap-1 outline-none rounded border-2 border-brd bg-0 px-2;
+    @apply flex flex-row h-9 items-stretch w-full gap-1 outline-none rounded border-2 border-brd bg-b0 px-2;
 
     & > input{
-      @apply bg-0 grow rounded border-none min-w-0 w-full;
+      @apply bg-b0 grow rounded border-none min-w-0 w-full;
     }
 
     // &-error{
