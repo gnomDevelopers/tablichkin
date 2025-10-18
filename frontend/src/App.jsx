@@ -6,7 +6,7 @@ import ProtectedRoute from './lib/protectedRoute';
 import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import SelectTablePage from './pages/MainPage/SubPages/SelectTablePage';
-import CreateTablePage from './pages/MainPage/SubPages/CreateTablePage';
+import CreateTablePage from './pages/MainPage/SubPages/CreateTablePage/CreateTablePage';
 
 function App() {
   return (

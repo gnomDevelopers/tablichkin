@@ -1,5 +1,6 @@
 import { useUser } from "../../../context/UserContext";
 import { useNavigate } from 'react-router-dom';
+import { useLocation  } from "react-router-dom";
 
 import Button from "../../../lib/customButton";
 import IconLogout from "../../../assets/icons/icon_logout.svg";
@@ -7,6 +8,7 @@ import IconLogout from "../../../assets/icons/icon_logout.svg";
 function MainPageHeader() {
   const userContext = useUser();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const logoutHandler = () => {
     userContext.logout();
@@ -18,10 +20,10 @@ function MainPageHeader() {
   }
 
   return (
-    <header className="flex flex-row gap-4 items-stretch w-full h-14">
+    <header className="flex flex-row gap-4 items-stretch w-full h-14 shrink-0">
       <div className="grow px-4 flex flex-col overflow-hidden">
         <div className="flex flex-col items-start justify-center h-full">
-          <Button text="Создать таблицу" onClick={createTableHandle} />
+          {location.pathname !== '/main/table/create' && <Button text="Создать таблицу" onClick={createTableHandle} />}
         </div>
       </div>
 
