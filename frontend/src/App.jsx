@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import SelectTablePage from './pages/MainPage/SubPages/SelectTablePage';
 import CreateTablePage from './pages/MainPage/SubPages/CreateTablePage/CreateTablePage';
+import EditTablePage from './pages/MainPage/SubPages/EditTablePage/EditTablePage';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
                 {/* Вложенные маршруты */}
                 <Route index element={<SelectTablePage />} />
                 <Route path="table/create" element={<CreateTablePage />} />
-                {/* <Route path="table/:tableID" element={<TableView />} /> */}
+                <Route path="table/:tableID" element={<EditTablePage />} />
               </Route>
             </Routes>
         </Router>

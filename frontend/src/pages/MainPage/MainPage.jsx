@@ -14,21 +14,6 @@ function MainPage() {
           <TableItem title="Бух. учет за 2024г" lastChange="12.02.2024" onClick={() => console.log('select')}/>
           <TableItem title="Бух. учет за 2025г" lastChange="13.02.2025" onClick={() => console.log('select')}/>
           <TableItem title="Бух. учет за 2026г" lastChange="14.02.2026" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2024г" lastChange="12.02.2024" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2025г" lastChange="13.02.2025" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2026г" lastChange="14.02.2026" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2024г" lastChange="12.02.2024" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2025г" lastChange="13.02.2025" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2026г" lastChange="14.02.2026" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2024г" lastChange="12.02.2024" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2025г" lastChange="13.02.2025" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2026г" lastChange="14.02.2026" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2024г" lastChange="12.02.2024" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2025г" lastChange="13.02.2025" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2026г" lastChange="14.02.2026" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2024г" lastChange="12.02.2024" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2025г" lastChange="13.02.2025" onClick={() => console.log('select')}/>
-          <TableItem title="Бух. учет за 2026г" lastChange="14.02.2026" onClick={() => console.log('select')}/>
         </div>
       </section>
       <Outlet />
