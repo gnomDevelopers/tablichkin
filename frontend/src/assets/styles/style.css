@@ -1,8 +1,10 @@
 @theme {
   --color-0: oklch(0.979 0 0);
+  --color-1-5: oklch(0.959 0 0);
   --color-1: oklch(0.939 0 0);
   --color-status-window-bg: oklch(0.8975 0 0);
   --color-brd: oklch(0.8853 0 0);
+  --color-brd-dark: oklch(0.8253 0 0);
   --color-text-primary: oklch(0.3012 0 0);
   --color-text-secondary: oklch(0.9911 0 0);
   --color-text-description: oklch(0.7826 0 0);
@@ -48,6 +50,69 @@
   }
   .animate-slide-out {
     animation: slideOut 0.3s ease-in forwards;
+  }
+  .scrollable {
+    --scroll-bar-width: 6px;
+    --scroll-bar-border-radius: 2px;
+    --scroll-track-color: oklch(0.8 0 0);
+    --scroll-thumb-color: oklch(0.4926 0.0911 155.04);
+    overflow-y: scroll;
+    scrollbar-width: var(--scroll-bar-width);
+    touch-action: pan-y;
+  }
+  .scrollable::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+  }
+  .scrollable::-moz-scrollbar {
+    width: var(--scroll-bar-width);
+  }
+  .scrollable::-webkit-scrollbar-track {
+    background-color: var(--scroll-track-color);
+    border-radius: var(--scroll-bar-border-radius);
+    -webkit-transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+    cursor: pointer;
+  }
+  .scrollable::-moz-scrollbar-track {
+    background-color: var(--scroll-track-color);
+    border-radius: var(--scroll-bar-border-radius);
+    -moz-transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+    cursor: pointer;
+  }
+  .scrollable::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: var(--scroll-bar-border-radius);
+    -webkit-transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+    cursor: pointer;
+  }
+  .scrollable::-moz-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: var(--scroll-bar-border-radius);
+    -moz-transition: background-color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+    cursor: pointer;
+  }
+  .scrollable-invisible {
+    scrollbar-width: 0px;
+  }
+  .scrollable-invisible::-webkit-scrollbar {
+    width: 0px;
+  }
+  .scrollable-invisible::-moz-scrollbar {
+    width: 0px;
+  }
+  .scrollable-track-invisible {
+    --scroll-track-color: transparent;
+  }
+  .scrollable-x-y {
+    --scroll-bar-width: 6px;
+    --scroll-bar-height: 6px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb-color) #dddddd;
   }
 }
 @layer components {}/*# sourceMappingURL=style.css.map */

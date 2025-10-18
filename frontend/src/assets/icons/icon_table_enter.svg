@@ -1,0 +1,9 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="50" height="50" fill="url(#pattern0_11_73)"/>
+<defs>
+<pattern id="pattern0_11_73" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_11_73" transform="scale(0.01)"/>
+</pattern>
+<image id="image0_11_73" width="100" height="100" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACw0lEQVR4nO3cMW5TQRDG8UeTSLQUMyYpUxk68K7FCYISykjI+8UlRYi5CkeAgwAlGCQIdyAcAJnekQ0oEdAE+bHfzM5K/9ZPMz+99wpb7rqezt5sf1uQn2lJcy35uyIvo3zZaiclzQXpdHg03Or6PLvT8Y6W/Ln60LCRIJ+tdtbbnREY+fooJX3q5U5ZP6YIBlSDCdLTjYMo0vvag6nd3vUBsiAYbGmztOgBpPZQ2XQBAq4CBFwFCLgKEHAVIOAqQMBVgICrAAFXAQKuAgRcBQi4ChBwFSDgKkDAVYCAqwABVwECrgIEXAUIuDIEkr7qcTqWyejQ8y9bzIDIZHT46xqDJ/duasmvay+vbRDcv3v1Ol5RDIHkl79fyyOKGRD9gfK867obf6Agv6q9yCZBtAEUcyDqHMUkiDpGMQuiTlFMg6hDFPMg6gzFBYg6QnEDopconWUUVyDqAMUdiBpHcQmihlHcgqhRFNcgahDFPYgaQ2kCRA2hNAOiRlCaAlEDKJ2UdCAlndMK/6fzE+VNfRDkLxv9QMNnQIASIGwgOskPN4nSGT0DAoxe9ld7IP3XlzrJz4maAhFyjKZAxABGMyBiBKMJEDGE4R5EjGG4BhGDGG5BxCiGSxAxjOEORIxjuAIRBxhuQMQJhgsQcYRhHkScYZgGEYcYZkHEKYZJEHGMYQ5EnGPYAinpBevXrk2CyHR0xzuGLZCSDrxjWAM5X/89E8aPBPlD7cU1D6KNFCDgKkDAVYCAqwABVwECrgIEXAUIuAoQcBUg4CpAwFWAgKsAAVcBAq4CBFwFCLgKEHAVIOAqQMBVgMA9SFrUHkrt9m3zICXNCQZbmqzktxsHkTKeVR8MRiv5ZOMge7P9bUE+qz4cbCVIH4dHw62uj7M7He8ESr4Wxq3HD253fZ6VtiCdrp6L8aLPfykt1rsp+eTqnXEB69vOlyWSktYAAAAASUVORK5CYII="/>
+</defs>
+</svg>
